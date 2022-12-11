@@ -1,35 +1,35 @@
 #Understand data
--- WITH DL AS 
--- (
--- SELECT transaction_date,voucher_name,transaction_time,customer_id 
--- FROM `bitlabs-dab.I_CID_03.order`   
--- WHERE voucher_name = "mass_voucher_25%" order by 1 asc),
+WITH DL AS 
+(
+SELECT transaction_date,voucher_name,transaction_time,customer_id 
+FROM `bitlabs-dab.I_CID_03.order`   
+WHERE voucher_name = "mass_voucher_25%" order by 1 asc),
 
---  LP AS
--- (
--- SELECT transaction_date,voucher_name,transaction_time,customer_id 
--- FROM `bitlabs-dab.I_CID_03.order`   
--- WHERE voucher_name = "mass_voucher_50%" order by 1 asc)
+ LP AS
+(
+SELECT transaction_date,voucher_name,transaction_time,customer_id 
+FROM `bitlabs-dab.I_CID_03.order`   
+WHERE voucher_name = "mass_voucher_50%" order by 1 asc)
 
--- SELECT 
--- LP.voucher_name,
--- LP.Customer_id,
--- DL.voucher_name
--- FROM 
--- LP
--- JOIN DL
--- ON LP.customer_ID = DL.customer_ID ;
+SELECT 
+LP.voucher_name,
+LP.Customer_id,
+DL.voucher_name
+FROM 
+LP
+JOIN DL
+ON LP.customer_ID = DL.customer_ID ;
 
--- SELECT  count(customer_id),customer_id,voucher_name
--- FROM `bitlabs-dab.I_CID_03.order`  
--- GROUP BY 2,3
--- HAVING COUNT(customer_id)>1
--- order by 1 desc ;
+SELECT  count(customer_id),customer_id,voucher_name
+FROM `bitlabs-dab.I_CID_03.order`  
+GROUP BY 2,3
+HAVING COUNT(customer_id)>1
+order by 1 desc ;
 
--- SELECT  customer_id,voucher_name
--- FROM `bitlabs-dab.I_CID_03.order`  
--- where customer_id = '7a6ee9-0542-4498-a5fa-29fd16c3bf' ; 
-# jadi ini customernya beda beda antara mass_voucher 50 dan 25 kemungkinan flash coffe sedang melakukan A/B testing untuk customer yang berbeda
+SELECT  customer_id,voucher_name
+FROM `bitlabs-dab.I_CID_03.order`  
+where customer_id = '7a6ee9-0542-4498-a5fa-29fd16c3bf' ; 
+# jadi ini customernya beda beda antara mass_voucher 50 dan 25 kemungkinan  mereka sedang melakukan A/B testing untuk customer yang berbeda
 #agar dapat mengetahui behavior purchase ketika mendapat trigger welcome discount 50 atau 25 
 
 
