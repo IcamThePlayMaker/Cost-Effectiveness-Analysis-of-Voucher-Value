@@ -2,5 +2,5 @@
 - PLEASE READ THE SQL OBJECTIVE PROBLEM 
 
 
-- DUE TO CONFIDENTIAL AGREEMENT, I CANNOT SHARE DATA FILE TO PUBLIC, also Project document requirement I just can share how I query the data based on Project Requirement Document
+- DUE TO CONFIDENTIAL AGREEMENT, I CANNOT SHARE DATA FIlE AND Project document requirement to public  I just can share how I query the data 
 - To perform all sql syntax, I use big query. 
